@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG Solutions - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgba(14, 14, 14, 0.9); /* Transparent dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #1a9fff; /* Bright blue text */
+            overflow: hidden; /* Hide overflow */
+            position: relative;
+        }
+
+        .background-cyber {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .line {
+            position: absolute;
+            background: rgba(26, 159, 255, 0.5);
+            opacity: 0.3;
+            width: 100%;
+            height: 1px;
+            animation: move 5s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            border: 2px solid #1a9fff; /* Blue border */
+            border-radius: 15px; /* Softer corners */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Terminal styling */
+        .terminal {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark terminal background */
+            padding: 20px;
+            border: 1px solid #1a9fff; /* Blue border */
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+            overflow-y: auto;
+            height: 400px; /* Increased height for terminal */
+            color: #1a9fff; /* Bright blue text for terminal */
+            white-space: pre-wrap;
+            margin-bottom: 20px; /* Space between terminal and other content */
+        }
+
+        /* MacOS-style terminal bar */
+        .terminal-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent terminal bar */
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            gap: 6px;
+        }
+
+        .button-red, .button-yellow, .button-green {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .button-red { background-color: #ff5f57; }
+        .button-yellow { background-color: #ffbd2e; }
+        .button-green { background-color: #28c840; }
+
+        /* Services section */
+        .services {
+            font-size: 0.9em; /* Smaller font size */
+            color: #1a9fff; /* Bright blue */
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        /* Typing and cursor styles */
+        .blue { color: #1a9fff; }
+        .red { color: #ff0000; }
+        .yellow { color: #ffcc00; }
+        .purple { color: #a95cbb; }
+        .cyan { color: #00ffff; }
+        .white { color: #ffffff; }
+
+        .cursor {
+            display: inline-block;
+            background-color: #1a9fff; /* Blue cursor */
+            width: 10px;
+            height: 20px;
+            margin-left: 2px;
+            animation: blink 0.5s steps(2, start) infinite;
+            vertical-align: bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .tree {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .tree span {
+            display: block;
+            margin-left: 20px;
+            color: #1a9fff; /* Blue for services */
+        }
+
+        .danger {
+            color: #ff0000; /* Red for danger alerts */
+        }
+    </style>
+</head>
+<body>
+    <div class="background-cyber">
+        <div class="line" style="top: 10%;"></div>
+        <div class="line" style="top: 20%;"></div>
+        <div class="line" style="top: 30%;"></div>
+        <div class="line" style="top: 40%;"></div>
+        <div class="line" style="top: 50%;"></div>
+        <div class="line" style="top: 60%;"></div>
+        <div class="line" style="top: 70%;"></div>
+        <div class="line" style="top: 80%;"></div>
+        <div class="line" style="top: 90%;"></div>
+    </div>
+
+    <div class="container">
+        <h1>SDG SOLUTIONS</h1>
+        <p>Specialists in Cloud Management and Networks</p>
+
+        <!-- Terminal window -->
+        <div class="terminal">
+            <div class="terminal-bar">
+                <div class="button-red"></div>
+                <div class="button-yellow"></div>
+                <div class="button-green"></div>
+            </div>
+            <div id="terminalText"></div>
+            <span class="cursor" id="cursor"></span>
+        </div>
+
+        <!-- Services section -->
+        <div class="services">
+            <h2>Our Services</h2>
+            <div class="tree">
+                <span>🌐 Helping businesses thrive in the digital age</span>
+                <span>🚀 Driving growth and maximizing online presence</span>
+                <span>💼 Web Consulting Expertise:</span>
+                <span>   ├── Business Management</span>
+                <span>   ├── Digital Marketing</span>
+                <span>   ├── Software Development</span>
+                <span>   ├── IT Consulting</span>
+                <span>   ├── Web Design & Development</span>
+                <span>   ├── UX/UI Design</span>
+                <span>   └── SEO & SEM</span>
+                <span>🔧 Specialties:</span>
+                <span>   ├── E-commerce Services (Shopify, Amazon Seller, Flipkart Seller)</span>
+                <span>   ├── Custom Software Applications</span>
+                <span>   ├── Cloud Solutions (AWS, GCP, Azure)</span>
+                <span>   └── Mobile Apps (iOS & Android)</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const terminalLines = [
+            "<span class='blue'>root@sdg-solutions:~#</span> Initializing system...",
+            "<span class='blue'>[+]</span> Setting up lab environments...",
+            "<span class='blue'>[+]</span> Loading security modules...",
+            "<span class='blue'>[+]</span> Preparing data network...",
+            "<span class='blue'>[+]</span> Establishing secure connections...",
+            "<span class='danger'>[!]</span> Alert: New vulnerabilities detected. Updating security protocols...",
+            "<span class='blue'>[+]</span> Launching with cloud solutions:",
+            "   - Azure",
+            "   - AWS",
+            "   - GCP",
+            "<span class='blue'>[+]</span> Loading modules:",
+            "   1. Cloud Management",
+            "   2. Network Security",
+            "<span class='blue'>[*]</span> Deployment ETA: Coming soon!",
+            "<span class='blue'>root@sdg-solutions:~#</span> _"
+        ];
+
+        let i = 0;
+        let j = 0;
+        let currentText = "";
+        const terminalElement = document.getElementById("terminalText");
+        const cursor = document.getElementById("cursor");
+
+        function typeLine() {
+            if (i < terminalLines.length) {
+                if (j < terminalLines[i].length) {
+                    currentText += terminalLines[i].charAt(j);
+                    terminalElement.innerHTML = currentText;
+                    j++;
+                    setTimeout(typeLine, 2); // Adjusted typing speed
+                } else {
+                    currentText += "<br>";
+                    i++;
+                    j = 0;
+                    setTimeout(typeLine, 300);
+                }
+            } else {
+                cursor.style.display = "none"; // Hide cursor when done
+            }
+        }
+
+        typeLine();
+    </script>
+</body>
+</html>
